@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UCPSuite" parallel="tests">
+	<listeners>
+		<listener class-name="com.listener.CustomListeners" />
+	</listeners>
+<!-- Please follow the below guidelines and key values(case sensitive) while modifying this xml file. Failing to follow these, may result in script failure
+
+	Applicable for both Cloud and Local
+	
+	#1 browser-Type: represents the browser on which scripts need to execute
+		
+		  Browser Description - Key value to use
+		  ======================================
+
+		1. Mozilla Firefox :- firefox
+		2. Google Chrome :- chrome
+		3. ExecutionType:-Remote,local
+-->	
+	
+ <!-- <test name="UCPLogin_Firefox">
+ <parameter name="Browser" value="firefox"/>
+ <parameter name="ExecutionType" value="Remote"/>
+    <classes>
+      <class name="com.testcases.UCPLogin"/>
+    </classes>
+  </test> -->
+  
+ <test thread-count="1" name="UCP_AddUserScenario">
+     	<parameter name="Browser" value="chrome"/>
+     	<parameter name="ExecutionType" value="Remote"/>
+    <classes>
+      <class name="com.testcases.UcpTestSuite"/>
+    </classes>
+  </test>
+  
+</suite>

@@ -1,0 +1,15 @@
+#string
+#Thu Mar 07 16:17:55 IST 2019
+UcpAdminUserName=ds.ucp@cdkauto.com
+UcpAdminPassword=Wfxg32RR34bu
+cdkSimpleId=@cdkauto.com
+role=UCP Administrator
+testsiteurl=https\://www-dit.connectcdk.com/a/unifiedcustomerportal
+browser=chrome
+newAdminPassword=CDKcdk@11
+implicit.wait=30
+USERNAME=cdk-globalit
+firstName=UcpTest
+createdUsername=thisUsername
+lastName=testing user
+ACCESS_KEY=586141a1-a639-42ec-b67f-170268909d56

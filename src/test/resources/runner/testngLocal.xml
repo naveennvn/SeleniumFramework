@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UCPSuite" parallel="tests">
+	<listeners>
+		<listener class-name="com.listener.CustomListeners" />
+	</listeners>
+<!-- Please follow the below guidelines and key values(case sensitive) while modifying this xml file. Failing to follow these, may result in script failure
+
+	Applicable for both Cloud and Local
+	
+	#1 browser-Type: represents the browser on which scripts need to execute
+		
+		  Browser Description - Key value to use
+		  ======================================
+
+		1. Mozilla Firefox :- firefox
+		2. Google Chrome :- chrome
+		3. ExecutionType:-Remote,local
+-->	
+	  
+<!--  <test thread-count="2" name="UCP_CreateNewUser">
+     	<parameter name="Browser" value="chrome"/>
+     	<parameter name="ExecutionType" value="local"/>
+    <classes>
+      <class name="com.testcases.UcpTestSuite">
+      <methods>
+      <include name="CreateNewUser"></include>
+      <include name="firstTimeUserLogin"></include>
+      <include name="UserSearch"></include>
+      <include name="ApplicationAccess"></include>
+      <include name="CreatNonAdminUser"></include>
+       </methods>
+      </class>
+    </classes>
+</test> -->
+ <test thread-count="2" name="UCP_CreateNonAdminUser/UserRole">
+     	<parameter name="Browser" value="chrome"/>
+     	<parameter name="ExecutionType" value="local"/>
+     <classes>
+      <class name="com.testcases.UcpTestSuite">
+      <methods>
+      <include name="DeleteUser"/>
+       </methods>
+      </class>
+    </classes>
+</test>
+  
+<!--    <test thread-count="2" name="UCP_ApplicationAccess">
+     	<parameter name="Browser" value="chrome"/>
+     	<parameter name="ExecutionType" value="local"/>
+    <classes>
+      <class name="com.testcases.UcpTestSuite">
+      <methods>
+      <include name="firstTimeUserLogin"></include>
+       </methods>
+      </class>
+    </classes>
+  </test> -->
+  
+<!--  <test thread-count="2" name="UCP_ApplicationAccess">
+     	<parameter name="Browser" value="chrome"/>
+     	<parameter name="ExecutionType" value="local"/>
+    <classes>
+      <class name="com.testcases.UcpTestSuite">
+      <methods>
+      <include name="ApplicationAccess"></include>
+      </methods>
+      </class>
+    </classes>
+  </test> -->
+  
+  
+   
+</suite>

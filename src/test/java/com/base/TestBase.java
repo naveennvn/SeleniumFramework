@@ -101,7 +101,7 @@ public class TestBase {
 	private void executeonRemote(String browser,ITestContext context) {
 
 		log.info("-----------------STARTED RUNNING SELENIUM TESTS ON CLOUD /GRID------------------");
-		String USERNAME = "cdk-globalit";
+		String USERNAME = "nvn-user1";
 		String ACCESS_KEY = "586141a1-a639-42ec-b67f-170268909d56";  
 		String SauceLabsURL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
 		if (browser.contains("firefox"))

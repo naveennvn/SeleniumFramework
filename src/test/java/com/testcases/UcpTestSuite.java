@@ -21,30 +21,11 @@ public class UcpTestSuite extends TestBase {
 	public ucpLoginPage _loginPage;
 	public ucpHomePage  _homePage;
 	public ucpSkipDetails _skipPage;
-	public AdminPage _adminPage;
-	public AddUserPage _addUserDetails;
-	public AssignRoleSubPage _assignRole;
-	public AssignStore _assignStore;
-	public TestUtil _TestUtil;
-	public PwChangeNewUser _newUserPwChange;
-	public ucpSecurityQuestions _ucpSecurityQuestions;
-	public AssignApplicationAccess _AssignApplicationAccess;
-	public UCPApplicationsAccess _UCPApplicationsAccess;
-	public UserDetails _userDetails;
 	@BeforeMethod
 	public void initialisation() {
 		_loginPage= new ucpLoginPage(driver);
 		_homePage = new ucpHomePage(driver);
 		_skipPage = new ucpSkipDetails(driver);
-		_adminPage = new AdminPage(driver);
-		_addUserDetails = new AddUserPage(driver);
-		_assignStore = new AssignStore(driver);
-		_assignRole=new AssignRoleSubPage(driver);
-		_newUserPwChange= new PwChangeNewUser(driver);
-		_ucpSecurityQuestions= new ucpSecurityQuestions(driver);
-		_AssignApplicationAccess= new AssignApplicationAccess(driver);
-		_UCPApplicationsAccess= new UCPApplicationsAccess(driver);
-		_userDetails = new UserDetails(driver);
 		
 	}
 	
@@ -103,15 +84,6 @@ public class UcpTestSuite extends TestBase {
 		_skipPage.skipDetails();
 		_homePage.navigateToAdminPage();
 		 TestUtil.switchWindow("Admin");
-		_adminPage.clickonUsers();
-		_adminPage.clickOnAddUser();
-		_addUserDetails.addDetails("UCPUSER");
-		_addUserDetails.assignRoleButton();
-		_assignRole.searchAndSelectRole(config.getProperty("Userrole"));		
-		_addUserDetails.assignStoreButton();
-		_assignStore.assignStore();
-		_addUserDetails.save();
-		_adminPage.logOut();
 		//driver.close();
 	}
 	@Test

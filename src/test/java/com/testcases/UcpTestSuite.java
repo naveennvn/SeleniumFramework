@@ -69,7 +69,7 @@ public class UcpTestSuite extends TestBase {
 	
 	@Test(dependsOnMethods={"CreateNewUser"})
 	public void Firsttimeuserlogin() throws InterruptedException, FileNotFoundException, IOException {
-		//_loginPage.loginToUcp(testData.getProperty("createdSimpleId", "1467@cdkauto.com"), testData.getProperty("changedPassword", "CDKcdk11"));
+		
 		_loginPage.loginToUcp(config.getProperty("testsiteurl"),TestUtil.getProperty("testData","createdSimpleId"), config.getProperty("generalPassword"));// testData.getProperty("changedPassword"));//  ;
 		_newUserPwChange.changePassword();
 		_skipPage.skipDetails();

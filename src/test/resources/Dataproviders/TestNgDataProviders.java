@@ -4,7 +4,7 @@ import org.testng.annotations.DataProvider;
 
 public class TestNgDataProviders {
 	
-	 @DataProvider(name = "UCPApplications")
+	 @DataProvider(name = "Applications")
 
 	  public static Object[][] Applications() {
 

@@ -41,7 +41,7 @@ public class TestSuite extends TestBase {
 		 TestUtil.switchWindow("Admin");
 		_adminPage.clickonUsers();
 		_adminPage.clickOnAddUser();
-		_addUserDetails.addDetails("UCPAdminUser");
+		_addUserDetails.addDetails("AdminUser");
 		_addUserDetails.assignRoleButton();
 		_assignRole.searchAndSelectRole(config.getProperty("Adminrole"));		
 		_addUserDetails.assignStoreButton();
@@ -52,7 +52,7 @@ public class TestSuite extends TestBase {
 	}
 	
 	
-	@Test(dependsOnMethods={"UserSearch"},dataProvider ="UCPApplications" ,dataProviderClass =TestNgDataProviders.class)
+	@Test(dependsOnMethods={"UserSearch"},dataProvider ="Applications" ,dataProviderClass =TestNgDataProviders.class)
 	  public void ApplicationAccess(String Application,String ApplicationValue1) throws Exception{
 	
 	}
@@ -63,7 +63,7 @@ public class TestSuite extends TestBase {
 		 TestUtil.switchWindow("Admin");
 		_adminPage.clickonUsers();
 		_adminPage.clickOnAddUser();
-		_addUserDetails.addDetails("UCPUSER");
+		_addUserDetails.addDetails("USEROne");
 		_addUserDetails.assignRoleButton();
 		_assignRole.searchAndSelectRole(config.getProperty("Userrole"));		
 		_addUserDetails.assignStoreButton();

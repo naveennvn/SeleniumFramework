@@ -18,27 +18,27 @@ public class AssignApplicationAccess extends ExtentManager {
 		}
 
 		@FindBy(xpath = "//span[text()='User Administration']")
-		WebElement UCPHome_USerAdmin;
+		WebElement Home_USerAdmin;
 		
 		@FindBy(name = "loginId")
-		WebElement UCP_USeremailidtosearch;
+		WebElement _USeremailidtosearch;
 		
 		@FindBy(xpath = "//button[@type='submit']")
-		WebElement UCPAdminpage_SearchUser;
+		WebElement Adminpage_SearchUser;
 		
 		@FindBy(xpath = "//div[@class='mdc-card']/nav/a[2]")
-		WebElement ucpadmin_applicationacces_tab;
+		WebElement admin_applicationacces_tab;
 		
 
 public void Usersearch(String SUsername){
 	
-	UCPHome_USerAdmin.click();
-	UCP_USeremailidtosearch.clear();
-	UCP_USeremailidtosearch.sendKeys(SUsername);
-	UCPAdminpage_SearchUser.click();
+	Home_USerAdmin.click();
+	_USeremailidtosearch.clear();
+	_USeremailidtosearch.sendKeys(SUsername);
+	Adminpage_SearchUser.click();
 	Userelements = driver.findElement(new CustomLocatorbyxpath(SUsername));
 	Userelements.click();
-	ucpadmin_applicationacces_tab.click();
+	admin_applicationacces_tab.click();
 	
 	}
 

@@ -60,7 +60,7 @@ public class AdminPage extends ExtentManager {
 		//code to be written for sign out button to be clicked
 	}
 	public void searchUser() {
-		search_txt.sendKeys("ucptest");
+		search_txt.sendKeys("test");
 		search_txt.sendKeys(Keys.ENTER);
 	}
 	public void viewUser() {

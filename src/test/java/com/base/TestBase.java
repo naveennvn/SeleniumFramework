@@ -35,7 +35,7 @@ import com.utilities.TestUtil;
  * Intilaizes the browser and creates the desired capabilities if execution is performed on Remote 
  * Give local[to execute in local machine] or Remote[to execute on sauce labs] in TestNG xml for each test as per the requirement 
  * 
- * @author repalan
+ * @author Naveen R
  *
  */
 public class TestBase {
@@ -118,7 +118,7 @@ public class TestBase {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//driver.get("https://www-dit.connectcdk.com/a/unifiedcustomerportal/");
+			
 
 		}
 

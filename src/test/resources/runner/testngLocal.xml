@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="UCPSuite" parallel="tests">
+<suite name="AutomationSuite" parallel="tests">
 	<listeners>
 		<listener class-name="com.listener.CustomListeners" />
 	</listeners>
@@ -18,26 +18,11 @@
 		3. ExecutionType:-Remote,local
 -->	
 	  
-<!--  <test thread-count="2" name="UCP_CreateNewUser">
-     	<parameter name="Browser" value="chrome"/>
-     	<parameter name="ExecutionType" value="local"/>
-    <classes>
-      <class name="com.testcases.UcpTestSuite">
-      <methods>
-      <include name="CreateNewUser"></include>
-      <include name="firstTimeUserLogin"></include>
-      <include name="UserSearch"></include>
-      <include name="ApplicationAccess"></include>
-      <include name="CreatNonAdminUser"></include>
-       </methods>
-      </class>
-    </classes>
-</test> -->
- <test thread-count="2" name="UCP_CreateNonAdminUser/UserRole">
+ <test thread-count="2" name="CreateNonAdminUser/UserRole">
      	<parameter name="Browser" value="chrome"/>
      	<parameter name="ExecutionType" value="local"/>
      <classes>
-      <class name="com.testcases.UcpTestSuite">
+      <class name="com.testcases.TestSuite">
       <methods>
       <include name="DeleteUser"/>
        </methods>
@@ -45,11 +30,11 @@
     </classes>
 </test>
   
-<!--    <test thread-count="2" name="UCP_ApplicationAccess">
+<!--    <test thread-count="2" name="ApplicationAccess">
      	<parameter name="Browser" value="chrome"/>
      	<parameter name="ExecutionType" value="local"/>
     <classes>
-      <class name="com.testcases.UcpTestSuite">
+      <class name="com.testcases.TestSuite">
       <methods>
       <include name="firstTimeUserLogin"></include>
        </methods>
@@ -57,11 +42,11 @@
     </classes>
   </test> -->
   
-<!--  <test thread-count="2" name="UCP_ApplicationAccess">
+<!--  <test thread-count="2" name="ApplicationAccess">
      	<parameter name="Browser" value="chrome"/>
      	<parameter name="ExecutionType" value="local"/>
     <classes>
-      <class name="com.testcases.UcpTestSuite">
+      <class name="com.testcases.TestSuite">
       <methods>
       <include name="ApplicationAccess"></include>
       </methods>

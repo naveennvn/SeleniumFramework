@@ -31,9 +31,6 @@ public class AddUserPage extends ExtentManager {
 	@FindBy(name="lastName")
 	WebElement lastName;
 	
-	@FindBy(name="userName")
-	WebElement cdkSimpleId;
-	
 	@FindBy(xpath="//button[contains(text(),'Save')]")
 	WebElement saveBtn;
 	
@@ -55,12 +52,11 @@ public class AddUserPage extends ExtentManager {
 		StringBuilder random = new StringBuilder();
 		random = TestUtil.getRandomNum();
 		String firstname = usertype+"-"+TestBase.config.getProperty("firstName") + random;
-		String simpleid = random + TestBase.config.getProperty("cdkSimpleId");
+		String simpleid = random + TestBase.config.getProperty("SimpleId");
 		TestUtil.writeProperty("testData", "createdUserName", firstname);
 		TestUtil.writeProperty("testData", "createdSimpleId", simpleid);
 		firstName.sendKeys(firstname);
 		lastName.sendKeys(TestBase.config.getProperty("lastName"));
-		cdkSimpleId.sendKeys(simpleid);
 		password.sendKeys(TestBase.config.getProperty("generalPassword"));
 		reTypePassword.sendKeys(TestBase.config.getProperty("generalPassword"));
 		test.log(LogStatus.INFO, "Added new user details");

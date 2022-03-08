@@ -26,7 +26,7 @@ public class AdminPage extends ExtentManager {
 	WebElement adduser; 
 	 
 	 
-	 @FindBy(xpath="//div/i[@class='cdk-gh-profile__icon cdkicon-account_circle']")
+	 @FindBy(xpath="//div/i[@class='_circle']")
 		WebElement UserProfileIcon;
 	 
 	 @FindBy(xpath="//span[text()='Sign Out']")

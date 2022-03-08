@@ -14,7 +14,7 @@ public class ApplicationaccessCutomLocator extends By	{
 		
 		@Override
 		public List<WebElement> findElements(SearchContext context) {
-			List<WebElement> mockElements = context.findElements(By.xpath("//td[text()='" + customlocator + "'"+"]/ancestor::tr/child::td//i[@class='cdkicon-add_circle clickable']"));
+			List<WebElement> mockElements = context.findElements(By.xpath("//td[text()='" + customlocator + "'"+"]/ancestor::tr/child::td//i[@class='add_circle clickable']"));
 	         return mockElements;
 		}
 	}

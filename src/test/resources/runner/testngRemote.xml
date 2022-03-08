@@ -18,19 +18,12 @@
 		3. ExecutionType:-Remote,local
 -->	
 	
- <!-- <test name="UCPLogin_Firefox">
- <parameter name="Browser" value="firefox"/>
- <parameter name="ExecutionType" value="Remote"/>
-    <classes>
-      <class name="com.testcases.UCPLogin"/>
-    </classes>
-  </test> -->
-  
- <test thread-count="1" name="UCP_AddUserScenario">
+   
+ <test thread-count="1" name="AddUserScenario">
      	<parameter name="Browser" value="chrome"/>
      	<parameter name="ExecutionType" value="Remote"/>
     <classes>
-      <class name="com.testcases.UcpTestSuite"/>
+      <class name="com.testcases.TestSuite"/>
     </classes>
   </test>
   

@@ -1,20 +1,19 @@
+
 package com.testcases;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import com.base.TestBase;
-import com.utilities.JSWaiter;
+import com.pagefunctions.AddUserPage;
+import com.pagefunctions.AdminPage;
+import com.pagefunctions.AssignRoleSubPage;
+import com.pagefunctions.AssignStore;
+import com.pagefunctions.UserDetails;
 import com.utilities.TestUtil;
-
-import Dataproviders.TestNgDataProviders;
-
-import com.PageFunctions.*;
 
 
 public class TestSuite extends TestBase {
@@ -38,7 +37,6 @@ public class TestSuite extends TestBase {
 	
 	@Test
 	public void CreateNewUser() throws InterruptedException, FileNotFoundException, IOException {
-		 TestUtil.switchWindow("Admin");
 		_adminPage.clickonUsers();
 		_adminPage.clickOnAddUser();
 		_addUserDetails.addDetails("AdminUser");
@@ -52,15 +50,9 @@ public class TestSuite extends TestBase {
 	}
 	
 	
-	@Test(dependsOnMethods={"UserSearch"},dataProvider ="Applications" ,dataProviderClass =TestNgDataProviders.class)
-	  public void ApplicationAccess(String Application,String ApplicationValue1) throws Exception{
-	
-	}
-	
 		
 	@Test(enabled = false)
 	public void CreatNonAdminUser() throws InterruptedException, FileNotFoundException, IOException {
-		 TestUtil.switchWindow("Admin");
 		_adminPage.clickonUsers();
 		_adminPage.clickOnAddUser();
 		_addUserDetails.addDetails("USEROne");

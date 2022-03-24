@@ -135,24 +135,4 @@ public class TestUtil extends TestBase {
 		return propfile.getProperty(key);
 	}
 	
-	public static void switchWindow(String title) {
-		Set<String> windows = driver.getWindowHandles();
-	    for(String i : windows) {
-	    	String switchWindow = driver.switchTo().window(i).getTitle();
-	    	
-	    	if(!switchWindow.equals(title)) {
-	    		driver.switchTo().window(i).close();
-	    		
-	    	}
-	    	
-	    	  if(driver.getWindowHandles().size()==0){
-	    		  
-	    		  log.info("Failed to find the matched title"+title);
-	    		  
-	    	  }
-	    	//driver.switchTo().window(currentwindow);
-	    	
-	    }
-	}
-	
 }

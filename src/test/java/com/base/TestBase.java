@@ -25,15 +25,22 @@ import org.testng.ITestContext;
 import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import com.listener.EventListeners;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.reports.ExtentManager;
 import com.utilities.ExcelReader;
 import com.utilities.JSWaiter;
 import com.utilities.TestUtil;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 /**
- * Intilaizes the browser and creates the desired capabilities if execution is performed on Remote 
- * Give local[to execute in local machine] or Remote[to execute on sauce labs] in TestNG xml for each test as per the requirement 
+ * Intilaizes the browser and creates the desired capabilities if execution is
+ * performed on Remote Give local[to execute in local machine] or Remote[to
+ * execute on sauce labs] in TestNG xml for each test as per the requirement
  * 
  * @author Naveen R
  *
@@ -41,31 +48,31 @@ import com.utilities.TestUtil;
 public class TestBase {
 
 	/*
-	 * WebDriver - done Properties - done Logs - log4j jar, .log,
-	 * log4j.properties, Logger ExtentReports DB Excel Mail ReportNG,
-	 * ExtentReports Jenkins
-	 * 
-	 *  
+	 * WebDriver - done Properties - done Logs - log4j jar, .log, log4j.properties,
+	 * Logger ExtentReports DB Excel Mail ReportNG, ExtentReports Jenkins
 	 */
+	
 	public static Logger log;
 	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static FileInputStream fis;
 	public static ExcelReader excel = new ExcelReader(".//src//test//resources//excel//testdata.xlsx");
 	public static WebDriverWait wait;
-	public DesiredCapabilities cap=null;
+	public DesiredCapabilities cap = null;
 	public EventFiringWebDriver _efDriver;
 	public JSWaiter _jswait;
-
+	public static ThreadLocal<WebDriver> tDriver=new ThreadLocal<WebDriver>();
+	
 	/**
-	 * Purpose - to initiate driver based on the browser,execution-type taken from testng.xml
-	 * Author- Naveen
+	 * Purpose - to initiate driver based on the browser,execution-type taken from
+	 * testng.xml Author- Naveen
 	 * 
 	 */
-	@Parameters({"Browser","ExecutionType"})
+	@Parameters({ "Browser", "ExecutionType" })
 	@BeforeClass
-	public void setUp(String browser,String executiontype,ITestContext context) throws FileNotFoundException {
-		log=Logger.getLogger("devpinoyLogger");
+	public void setUp(@Optional("chrome") String browser, @Optional("local") String executiontype, ITestContext context)
+			throws FileNotFoundException {
+		log = Logger.getLogger("devpinoyLogger");
 		System.out.println(System.getProperty("user.dir"));
 		if (driver == null) {
 
@@ -78,34 +85,32 @@ public class TestBase {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			if(executiontype.contains("local"))
-			{
-				executeinlocal(browser,context);
+
+			if (executiontype.contains("local")) {
+				executeinlocal(browser, context);
 			}
 
-			else if (executiontype.contains("Remote"))
-			{
-				executeonRemote(browser,context);
+			else if (executiontype.contains("Remote")) {
+				executeonRemote(browser, context);
 			}
-			_jswait=new JSWaiter(driver);
-			_efDriver=new EventFiringWebDriver(driver);
-			EventListeners _event=new EventListeners();
-			driver=_efDriver.register(_event);
+			_jswait = new JSWaiter(driver);
+			_efDriver = new EventFiringWebDriver(driver);
+			EventListeners _event = new EventListeners();
+			driver = _efDriver.register(_event);
 			driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")),
 					TimeUnit.SECONDS);
-			//wait = new WebDriverWait(driver, 5);
+			driver.get(config.getProperty("testsiteurl"));
+			// wait = new WebDriverWait(driver, 5);
 		}
 	}
 
-	private void executeonRemote(String browser,ITestContext context) {
+	private void executeonRemote(String browser, ITestContext context) {
 
 		log.info("-----------------STARTED RUNNING SELENIUM TESTS ON CLOUD /GRID------------------");
 		String USERNAME = "";
-		String ACCESS_KEY = "";  
+		String ACCESS_KEY = "";
 		String SauceLabsURL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
-		if (browser.contains("firefox"))
-		{
+		if (browser.contains("firefox")) {
 			cap = DesiredCapabilities.firefox();
 			cap.setBrowserName("firefox");
 			cap.setPlatform(Platform.ANY);
@@ -113,74 +118,55 @@ public class TestBase {
 			cap.setCapability("name", context.getName());
 
 			try {
-				driver = new RemoteWebDriver(new URL(SauceLabsURL),cap);
+				driver = new RemoteWebDriver(new URL(SauceLabsURL), cap);
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-
 		}
 
-		if (browser.contains("chrome"))
-		{
+		if (browser.contains("chrome")) {
 			cap = DesiredCapabilities.chrome();
 			cap.setBrowserName("chrome");
 			cap.setPlatform(Platform.ANY);
 			cap.setCapability("name", context.getName());
 
 			try {
-				driver = new RemoteWebDriver(new URL(SauceLabsURL),cap);
+				driver = new RemoteWebDriver(new URL(SauceLabsURL), cap);
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}		
+		}
 	}
 
-	public void executeinlocal(String browser,ITestContext context)
-	{
+	public void executeinlocal(String browser, ITestContext context) {
 		log.info("-----------------STARTED RUNNING SELENIUM TESTS ON LOCAL MACHINE------------------");
 		if (browser.contains("firefox")) {
 
-			System.setProperty("webdriver.gecko.driver", ".\\src\\test\\resources\\executables\\gecko.exe");
+			// System.setProperty("webdriver.gecko.driver",
+			// ".\\src\\test\\resources\\executables\\gecko.exe");
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 
 		} else if (browser.contains("chrome")) {
 
-			System.setProperty("webdriver.chrome.driver",".\\src\\test\\resources\\executables\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			log.debug("Chrome Launched !!!");
 		} else if (browser.contains("ie")) {
-
-			System.setProperty("webdriver.ie.driver",".\\src\\test\\resources\\executables\\IEDriverServer.exe");
+			WebDriverManager.iedriver().setup();
+			// System.setProperty("webdriver.ie.driver",".\\src\\test\\resources\\executables\\IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 			log.debug("IE Launched !!!");
 		}
+		driver=getDriver();
 	}
-
 
 	public String getBrowserName() {
 		Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
 		return caps.getBrowserName();
 	}
-
-
-	public boolean isElementPresent(By by) {
-
-		try {
-
-			driver.findElement(by);
-			return true;
-
-		} catch (NoSuchElementException e) {
-
-			return false;
-
-		}
-
-	}
-
 	public static void verifyEquals(String expected, String actual) throws IOException {
 
 		try {
@@ -197,22 +183,39 @@ public class TestBase {
 			Reporter.log("<br>");
 			Reporter.log("<br>");
 			// Extent Reports
-			//test.log(LogStatus.FAIL, " Verification failed with exception : " + t.getMessage());
-			//test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
+			// test.log(LogStatus.FAIL, " Verification failed with exception : " +
+			// t.getMessage());
+			// test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
 		}
 
 	}
 
-/*After execution of all tests this is to quit the driver
- * gets executed after the execution of all tests
- */
+	/*
+	 * After execution of all tests this is to quit the driver gets executed after
+	 * the execution of all tests
+	 */
+	
+	public static synchronized WebDriver getDriver()
+	{
+		
+		try {
+			tDriver.set(driver);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tDriver.get();
+	}
+	
 	@AfterSuite
 	public void tearDown() {
 
 		if (driver != null) {
+			driver.close();
 			driver.quit();
 		}
-
+		
 		log.debug("test execution completed !!!");
 	}
 }

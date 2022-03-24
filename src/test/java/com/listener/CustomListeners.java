@@ -19,8 +19,6 @@ import org.testng.SkipException;
 import com.relevantcodes.extentreports.LogStatus;
 import com.reports.ExtentManager;
 import com.base.TestBase;
-import com.utilities.MonitoringMail;
-import com.utilities.TestConfig;
 import com.utilities.TestUtil;
 
 public class CustomListeners extends ExtentManager implements ITestListener,ISuiteListener {
@@ -31,10 +29,12 @@ public class CustomListeners extends ExtentManager implements ITestListener,ISui
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	public void onStart(ITestContext context) {
+	
+	
 		// TODO Auto-generated method stub
-	rep =ExtentManager.getInstance();
+	
 	
 	}
 
@@ -55,11 +55,12 @@ public class CustomListeners extends ExtentManager implements ITestListener,ISui
 		test.log(LogStatus.FAIL, context.getName().toUpperCase()+" Failed with exception : "+context.getThrowable());
 		test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
 		
-		Reporter.log("Click to see Screenshot");
+		/*Reporter.log("Click to see Screenshot");
 		Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+">Screenshot</a>");
 		Reporter.log("<br>");
 		Reporter.log("<br>");
 		Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+" height=200 width=200></img></a>");
+		*/
 		rep.endTest(test);
 		rep.flush();
 		
@@ -76,7 +77,7 @@ public class CustomListeners extends ExtentManager implements ITestListener,ISui
 
 
 	public void onTestStart(ITestResult context) {
-		
+		rep=ExtentManager.getInstance();
 		test = rep.startTest(context.getName().toUpperCase());
 		test.log(LogStatus.PASS, context.getName().toUpperCase()+" Started");
 	

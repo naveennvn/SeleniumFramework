@@ -1,4 +1,4 @@
-package com.PageFunctions;
+package com.pagefunctions;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -6,16 +6,12 @@ import java.io.IOException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.base.TestBase;
 import com.relevantcodes.extentreports.LogStatus;
 import com.reports.ExtentManager;
-import com.utilities.JSWaiter;
 import com.utilities.TestUtil;
 
 public class AddUserPage extends ExtentManager {

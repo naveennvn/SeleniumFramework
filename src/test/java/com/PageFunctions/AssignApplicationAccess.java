@@ -1,4 +1,4 @@
-package com.PageFunctions;
+package com.pagefunctions;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

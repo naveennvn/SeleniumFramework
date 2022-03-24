@@ -1,0 +1,86 @@
+16:31:27,436 DEBUG devpinoyLogger:78 - Config file loaded !!!
+16:31:27,447  INFO devpinoyLogger:146 - -----------------STARTED RUNNING SELENIUM TESTS ON LOCAL MACHINE------------------
+16:31:45,734 DEBUG devpinoyLogger:157 - Chrome Launched !!!
+16:31:47,009  INFO devpinoyLogger:110 - Exception occurred:  Returned value cannot be converted to List<String>: {stacktrace=Backtrace:
+	Ordinal0 [0x00929943+2595139]
+	Ordinal0 [0x008BC9F1+2148849]
+	Ordinal0 [0x007B43F0+1065968]
+	Ordinal0 [0x007D5D5D+1203549]
+	Ordinal0 [0x007D6F96+1208214]
+	GetHandleVerifier [0x00ACB232+1658114]
+	GetHandleVerifier [0x00B8312C+2411516]
+	GetHandleVerifier [0x009BF261+560433]
+	GetHandleVerifier [0x009BE366+556598]
+	Ordinal0 [0x008C286B+2173035]
+	Ordinal0 [0x008C75F8+2192888]
+	Ordinal0 [0x008C76E5+2193125]
+	Ordinal0 [0x008D11FC+2232828]
+	BaseThreadInitThunk [0x75E5FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77E47A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77E47A4E+238]
+, error=invalid session id, message=invalid session id}
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'naveen-pc', ip: '192.168.2.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: driver.version: EventFiringWebDriveron page:{stacktrace=Backtrace:
+	Ordinal0 [0x00929943+2595139]
+	Ordinal0 [0x008BC9F1+2148849]
+	Ordinal0 [0x007B43F0+1065968]
+	Ordinal0 [0x007D5B00+1202944]
+	Ordinal0 [0x007FB8E0+1358048]
+	Ordinal0 [0x007F9778+1349496]
+	Ordinal0 [0x007F9319+1348377]
+	Ordinal0 [0x00795367+938855]
+	Ordinal0 [0x007958E3+940259]
+	Ordinal0 [0x00795D7A+941434]
+	GetHandleVerifier [0x00ACB232+1658114]
+	GetHandleVerifier [0x00B8312C+2411516]
+	GetHandleVerifier [0x009BF261+560433]
+	GetHandleVerifier [0x009BE366+556598]
+	Ordinal0 [0x008C286B+2173035]
+	Ordinal0 [0x007950F7+938231]
+	Ordinal0 [0x00794BA8+936872]
+	GetHandleVerifier [0x00BA8CDC+2566060]
+	BaseThreadInitThunk [0x75E5FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77E47A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77E47A4E+238]
+, error=invalid session id, message=invalid session id}
+16:31:48,792 DEBUG devpinoyLogger:220 - test execution completed !!!
+20:45:25,920 DEBUG devpinoyLogger:78 - Config file loaded !!!
+20:45:25,971  INFO devpinoyLogger:140 - -----------------STARTED RUNNING SELENIUM TESTS ON LOCAL MACHINE------------------
+20:45:39,303 DEBUG devpinoyLogger:152 - Chrome Launched !!!
+20:45:39,609  INFO devpinoyLogger:22 - Before Navigating to https://www-ab.com/a/unifiedcustomerportal
+20:46:45,655  INFO devpinoyLogger:110 - Exception occurred:  unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=99.0.4844.82)
+  (Driver info: chromedriver=99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}),platform=Windows NT 10.0.19044 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 65.95 seconds
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'naveen-pc', ip: '10.128.172.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:65398}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, webauthn:extension:largeBlob=true, unexpectedAlertBehaviour=ignore, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}), userDataDir=C:\Users\naveen\AppData\Local\Temp\scoped_dir4572_943229397}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=99.0.4844.82, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: cb3296d33708d064646634616dddaa85on page:www-ab.com
+21:00:21,840 DEBUG devpinoyLogger:78 - Config file loaded !!!
+21:00:21,855  INFO devpinoyLogger:140 - -----------------STARTED RUNNING SELENIUM TESTS ON LOCAL MACHINE------------------
+21:00:28,218 DEBUG devpinoyLogger:152 - Chrome Launched !!!
+21:00:28,370  INFO devpinoyLogger:23 - Before Navigating to https://www-ab.com/a/unifiedcustomerportal
+21:01:12,213  INFO devpinoyLogger:111 - Exception occurred:  unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=99.0.4844.82)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'NAVEEN-PC', ip: '10.128.172.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\naveen\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:65511}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e4b095bf89e4d247e7a2f7e068a35eddon page:www-ab.com
+21:03:18,940 DEBUG devpinoyLogger:78 - Config file loaded !!!
+21:03:18,955  INFO devpinoyLogger:140 - -----------------STARTED RUNNING SELENIUM TESTS ON LOCAL MACHINE------------------
+21:03:25,390 DEBUG devpinoyLogger:152 - Chrome Launched !!!
+21:03:25,584  INFO devpinoyLogger:23 - Before Navigating to https://www.google.com/
+21:03:29,336  INFO devpinoyLogger:29 - After Navigated to https://www.google.com/
+21:03:59,983  INFO devpinoyLogger:111 - Exception occurred:  no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Users']/parent::a"}
+  (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'NAVEEN-PC', ip: '10.128.172.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\naveen\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49172}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 10a654fe3d0951c622ca5ad708677dc7
+*** Element info: {Using=xpath, value=//span[text()='Users']/parent::a}on page:Google
+21:04:01,318 DEBUG devpinoyLogger:215 - test execution completed !!!
